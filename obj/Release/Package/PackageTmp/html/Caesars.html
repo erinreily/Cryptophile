@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <title>Monoalphabetic Substitution</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../css/Home.css" />
+    <meta charset="utf-8" />
+
+    <script src="../scripts/JavaScript.js"></script>
+
+</head>
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="Home.html">Cryptophile</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li ><a href="Home.html">Home</a></li>
+                <li><a href="Steganography.html">Up To 600 BCE: Steganography</a></li>
+                <li class="active"><a href="Caesars.html">100 BCE: Caesar Cipher</a></li>
+                <li><a href="FrequencyAnalysis.html">800 AD: Frequency Analysis</a></li>
+                <li><a href="Polyalphabetic.html">1355 AD: Vigenère Cipher</a></li>
+                <li><a href="MaryQueen.html">1586 AD: Mary Queen of Scots</a></li>
+            </ul>
+        </div>
+    </nav>
+    <p class="title">Monoalphabetic Substitution (Caesar Cipher)</p>
+
+    <div class="lesson">
+        <p>
+            Substitution ciphers work by replacing each letter of the plain text with another letter. The Caesar 
+            Cipher, used by its namesake, Julius Caesar, is a type of monoalphabetic substitution cipher, 
+            and works by "shifting" each letter by a certain number of places down the alphabet. For example, if you 
+            have a shift of 2, and your plain text is ABC, then your encrypted text would be CDE. Shifting by 2 
+            would mean: your letter A would become C, your letter B would become D, and your letter C would become E.
+        </p>
+        <br/>
+        <p>
+            This cipher, though simple to use, is ineffective in today's world as there are only 26 possible ways to
+            decipher a message encoded in such a way. Once someone knows that a message is Caesar Cipher, it's only a
+            matter of time (and a short time at that) to figure out the meaning.
+        </p>
+    </div>
+
+    <p class="title">Practice</p>
+    <p class="lesson">
+        In the exercise below, create your own encrypted message and submit it to the computer for decrypting. 
+        If the decrypted message comes out correct, you encrypted it perfectly.
+    </p>
+    <p>Shift <input id="shiftamt" type="number" min="1" max="25" onchange="updateTable()"/> space(s)</p>
+    <table>
+        <tr>
+            <td>a</td>
+            <td>b</td>
+            <td>c</td>
+            <td>d</td>
+            <td>e</td>
+            <td>f</td>
+            <td>g</td>
+            <td>h</td>
+            <td>i</td>
+            <td>j</td>
+            <td>k</td>
+            <td>l</td>
+            <td>m</td>
+            <td>n</td>
+            <td>o</td>
+            <td>p</td>
+            <td>q</td>
+            <td>r</td>
+            <td>s</td>
+            <td>t</td>
+            <td>u</td>
+            <td>v</td>
+            <td>w</td>
+            <td>x</td>
+            <td>y</td>
+            <td>z</td>
+        </tr>
+        <tr>
+            <td id="0"></td>
+            <td id="1"></td>
+            <td id="2"></td>
+            <td id="3"></td>
+            <td id="4"></td>
+            <td id="5"></td>
+            <td id="6"></td>
+            <td id="7"></td>
+            <td id="8"></td>
+            <td id="9"></td>
+            <td id="10"></td>
+            <td id="11"></td>
+            <td id="12"></td>
+            <td id="13"></td>
+            <td id="14"></td>
+            <td id="15"></td>
+            <td id="16"></td>
+            <td id="17"></td>
+            <td id="18"></td>
+            <td id="19"></td>
+            <td id="20"></td>
+            <td id="21"></td>
+            <td id="22"></td>
+            <td id="23"></td>
+            <td id="24"></td>
+            <td id="25"></td>
+        </tr>
+    </table>
+
+    <textarea id="cinput" placeholder="Type an encrypted message here, and the computer will decipher it."></textarea>
+    <div class="button" onclick="decrypt(document.getElementById('cinput').value)">Submit</div>
+    <div id="cmessage"></div>
+
+    <div class="button" style="margin-left:80%"><a href="FrequencyAnalysis.html">Next Lesson</a></div>
+</body>
+</html>

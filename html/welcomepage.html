@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <link rel="stylesheet" href="../css/welcomepage.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+    <script>
+        function changetext() {
+            var elem = document.getElementById("welcometext");
+            var textNum = elem.title;
+            switch(textNum) {
+                case "1":
+                    elem.innerHTML = "However, what you just 'decoded' wasn't actually a cipher-- just some scrambled words.";
+                    elem.title = "2";
+                    break;
+                case "2":
+                    elem.innerHTML = "Cryptography is a lot more complicated. And it had to be in order to persist through thousands of years of steadily advancing cryptanalysis."
+                    elem.title = "3";
+                    break;
+                case "3":
+                    elem.innerHTML = "We'll start from the very beginning: Steganography. Click 'Learn' to begin the journey!"
+                    var button = document.getElementById("next");
+                    button.innerHTML = "<a href=\"Steganography.html\">Learn</a>";
+            }
+        }
+    </script>
+</head>
+<body>
+    <p id="welcometext" title="1">
+        You cracked the code! Welcome to Cryptophile!
+    </p>
+    <div id="next" onclick="changetext()">Next</div>
+
+</body>
+</html>

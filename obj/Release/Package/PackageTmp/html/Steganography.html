@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Steganography</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../css/Home.css" />
+	<meta charset="utf-8" />
+</head>
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="Home.html">Cryptophile</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li ><a href="Home.html">Home</a></li>
+                <li class="active"><a href="Steganography.html">Up To 600 BCE: Steganography</a></li>
+                <li><a href="Caesars.html">100 BCE: Caesar Cipher</a></li>
+                <li><a href="FrequencyAnalysis.html">800 AD: Frequency Analysis</a></li>
+                <li><a href="Polyalphabetic.html">1355 AD: Vigenère Cipher</a></li>
+                <li><a href="MaryQueen.html">1586 AD: Mary Queen of Scots</a></li>
+            </ul>
+        </div>
+    </nav>
+        <p class="title">Steganography</p>
+
+    <div class="lesson">
+        <p>
+            Steganography was the precursor to cryptography. While cryptography makes a message difficult to read 
+            without knowing the cipher, steganography simply hides the message. This works to a certain degree; as long
+            as no one but the intended recipient knows about the message, the secret is safe, but if the existence of the
+            message is revealed, anyone can read it. In ancient history, people hid their messages in various ways. One way was to tattoo
+            the message onto a shaven head, let the hair regrow, and shave it again when the carrier reached the 
+            destination. Another was to etch a message into a tablet or other such surface and cover it with wax.
+            </p>
+        <br/>
+        <p>
+            Although steganography has its drawbacks, it does have an advantage over cryptography. Where an encrypted 
+            message might draw attention and interest--thereby increasing the chances of it being broken--a concealed 
+            message is easily overlooked. Modern steganographic techniques include making text the same color as the 
+            background in documents/emails/web pages.
+        </p>
+    </div>
+    <br/>
+    <p class="lesson">Mouse over the wax-covered tablet to remove the wax and reveal the secret message!</p>
+    <div id="steggame">
+        <img id="top" src="../pictures/waxtablet.png" onmouseover="erase()" />
+        <img id="bottom" src="../pictures/unwaxtablet.png" />
+    </div>
+
+    <div class="button" style="margin-left:80%"><a href="Caesars.html">Next Lesson</a></div>
+</body>
+</html>

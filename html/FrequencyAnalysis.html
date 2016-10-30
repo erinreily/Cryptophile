@@ -1,0 +1,218 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Frequency Analysis</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../css/Home.css" />
+    <meta charset="utf-8" />
+
+    <script src="../scripts/JavaScript.js"></script>
+
+</head>
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="Home.html">Cryptophile</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li ><a href="Home.html">Home</a></li>
+                <li><a href="Steganography.html">Up To 600 BCE: Steganography</a></li>
+                <li><a href="Caesars.html">100 BCE: Caesar Cipher</a></li>
+                <li class="active"><a href="FrequencyAnalysis.html">800 AD: Frequency Analysis</a></li>
+                <li ><a href="Polyalphabetic.html">1355 AD: Vigenère Cipher</a></li>
+                <li ><a href="MaryQueen.html">1586 AD: Mary Queen of Scots</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div>
+        <p class="title">Frequency Analysis</p>
+    </div>
+    <div class="lesson">
+        <p>
+            One way that monoalphabetic substitution was combated was with a technique called frequency analysis. The cryptanalyst
+            uses the average frequency with which each letter appears in the English alphabet to get started
+            on decrypting a message. For example, the letter <b>e</b> is the most common in the alphabet, appearing
+            12.7% of the time! <b>E</b> is followed by <b>t</b> at 9.1%, <b>a</b> at 8.2%, and <b>o</b> at 7.5%, with <b>z</b> trailing 
+            at 0.07%. Logic follows that the most frequent letter in the encrypted message, be it <b>q</b>, <b>y</b>, or anything
+            else, will represent <b>e</b>. It's also a safe bet that the 3 next most frequent letters in the encrypted message
+            will represent <b>t</b>, <b>a</b>, and <b>o</b>.
+        </p>
+        <br/>
+        <p>
+            Frequency analysis works best with longer passages so that the average frequencies are more likely to line up
+            with unencrypted letter frequencies. Try deciphering the passage below: one letter will have a frequency
+            of around 15%, and it's a safe bet that that's our <b>e</b>!
+        </p>
+    </div>
+
+    <div>
+        <p class="title">Practice</p>
+    </div>
+    <div id="tables">
+        <table>
+            <tr>
+                <th colspan="10">Frequencies of letters in the English language</th>
+            </tr>
+            <tr>
+                <td>a</td>
+                <td>8.17%</td>
+                <td>h</td>
+                <td>6.09%</td>
+                <td>o</td>
+                <td>7.51%</td>
+                <td>v</td>
+                <td>0.98%</td>
+            </tr>
+            <tr>
+                <td>b</td>
+                <td>1.49%</td>
+                <td>i</td>
+                <td>7.00%</td>
+                <td>p</td>
+                <td>1.93%</td>
+                <td>w</td>
+                <td>2.36%</td>
+            </tr>
+            <tr>
+                <td>c</td>
+                <td>2.78%</td>
+                <td>j</td>
+                <td>0.15%</td>
+                <td>q</td>
+                <td>0.10%</td>
+                <td>x</td>
+                <td>0.15%</td>
+            </tr>
+            <tr>
+                <td>d</td>
+                <td>4.25%</td>
+                <td>k</td>
+                <td>0.77%</td>
+                <td>r</td>
+                <td>6.00%</td>
+                <td>y</td>
+                <td>1.97%</td>
+            </tr>
+            <tr>
+                <td>e</td>
+                <td>12.70%</td>
+                <td>l</td>
+                <td>4.03%</td>
+                <td>s</td>
+                <td>6.33%</td>
+                <td>z</td>
+                <td>0.07%</td>
+            </tr>
+            <tr>
+                <td>f</td>
+                <td>2.23%</td>
+                <td>m</td>
+                <td>2.41%</td>
+                <td>t</td>
+                <td>9.06%</td>
+           </tr>
+            <tr>
+                <td>g</td>
+                <td>2.01%</td>
+                <td>n</td>
+                <td>6.75%</td>
+                <td>u</td>
+                <td>2.76%</td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <th colspan="10">Frequencies of letters in the example below</th>
+            </tr>
+            <tr>
+                <td>a</td>
+                <td id="a"></td>
+                <td>h</td>
+                <td id="h"></td>
+                <td>o</td>
+                <td id="o"></td>
+                <td>v</td>
+                <td id="v"></td>
+            </tr>
+            <tr>
+                <td>b</td>
+                <td id="b"></td>
+                <td>i</td>
+                <td id="i"></td>
+                <td>p</td>
+                <td id="p"></td>
+                <td>w</td>
+                <td id="w"></td>
+            </tr>
+            <tr>
+                <td>c</td>
+                <td id="c"></td>
+                <td>j</td>
+                <td id="j"></td>
+                <td>q</td>
+                <td id="q"></td>
+                <td>x</td>
+                <td id="x"></td>
+            </tr>
+            <tr>
+                <td>d</td>
+                <td id="d"></td>
+                <td>k</td>
+                <td id="k"></td>
+                <td>r</td>
+                <td id="r"></td>
+                <td>y</td>
+                <td id="y"></td>
+            </tr>
+            <tr>
+                <td>e</td>
+                <td id="e"></td>
+                <td>l</td>
+                <td id="l"></td>
+                <td>s</td>
+                <td id="s"></td>
+                <td>z</td>
+                <td id="z"></td>
+            </tr>
+            <tr>
+                <td>f</td>
+                <td id="f"></td>
+                <td>m</td>
+                <td id="m"></td>
+                <td>t</td>
+                <td id="t"></td>
+            </tr>
+            <tr>
+                <td>g</td>
+                <td id="g"></td>
+                <td>n</td>
+                <td id="n"></td>
+                <td>u</td>
+                <td id="u"></td>
+            </tr>
+        </table>
+   </div>
+
+    <div id="practice">
+        <div id="message"></div>
+        <textarea id="input" placeholder="Type your decrypted answer here"></textarea>
+        <div id="idk">
+        <div class="button" onclick="checkSentence()">Check</div>
+        <div id="feedback"></div>
+            </div>
+    </div>
+
+    <script>
+        var str = "once upon a time, there were two ruling kingdoms, one to the west and one to the east. each king was greedy and desired the other's land, so a great war broke out. during the chaos, a neighboring clan took advantage of the two kings' weakened states and attempted to seize all the land. fortunately, the kings reconciled their differences in time to drive the vicious clan away, beginning an era of peace.";
+        document.getElementById("message").title = str;
+        newStr = encrypt(str);
+        document.getElementById("message").innerHTML = newStr;
+        calculateFrequencyOfLetters(newStr);
+    </script>
+
+    <div class="button" style="margin-left:80%"><a href="Polyalphabetic.html">Next Lesson</a></div>
+</body>
+</html>

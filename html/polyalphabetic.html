@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+
+    <title>Polyalphabetic Substitution</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../css/Home.css" />
+    <meta charset="utf-8" />
+
+    <script src="../scripts/JavaScript.js"></script>
+</head>
+<body>
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="Home.html">Cryptophile</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="Steganography.html">Up To 600 BCE: Steganography</a></li>
+                <li ><a href="Caesars.html">100 BCE: Caesar Cipher</a></li>
+                <li><a href="FrequencyAnalysis.html">800 AD: Frequency Analysis</a></li>
+                <li class="active"><a href="Polyalphabetic.html">1355 AD: Vigenère Cipher</a></li>
+                <li><a href="MaryQueen.html">1586 AD: Mary Queen of Scots</a></li>
+            </ul>
+        </div>
+    </nav>
+    <p class="title">Polyalphabetic Substitution (Vigenère Cipher)</p>
+
+    <div class="lesson">
+        <p>
+            Now that frequency analysis had been invented, cryptographers needed to come up with new ways
+            to confuse those who dared try to break their code. As the name suggests, this cipher uses multiple 
+            alphabets to encrypt messages. Typically a code word is chosen and applied letter by letter along
+            the message to denote through the alphabets. The Vigenère Cipher in particular is simply a series of 
+            Caesar Ciphers, although it took over 300 years to crack. One of the downfalls of polyalphabetic 
+            substitution is its relative complexity, which leads cryptographers to look elsewhere for their 
+            ciphers. However, the security of this substitution cannot be overlooked.
+        </p>
+        <br/>
+        <p>
+            In the Vigenère Cipher there are a total of 26 possible shift alphabets, including the normal one that starts with <b>a</b>.
+            Each letter of the keyword represents the shift alphabet that begins with that letter. For example,
+            if the keyword was cat, the first letter of the message would use the shift-2 alphabet that begins with
+            <b>c</b>, the second letter would use the normal alphabet, and the third letter would use the shift-19
+            alphabet that begins with <b>t</b>. A helpful tool for encrypting this way is the Vigenère table, shown below in the "Practice" section.
+        </p>
+    </div>
+
+    <p class="title">Practice</p>
+    <p class="lesson">
+        In the exercise below, create your own encrypted message and submit it to the computer for decrypting.
+        If the decrypted message comes out correct, you encrypted it perfectly.
+    </p>
+    <img id="vtable" src="../pictures/vcipher.png" style="width:30%" />
+    <div id="vstuff">
+    
+        <input id="vkey" placeholder="3 or 4 letter key."/>
+        <br/>
+        <textarea id="vinput" placeholder="Type an encrypted message here, and the computer will decipher it."></textarea>
+        <div class="button" onclick="vdecrypt(document.getElementById('vinput').value)">Submit</div>
+        <div id="vmessage"></div>
+    </div>
+
+    <div class="button" style="margin-left:80%"><a href="MaryQueen.html">Next Lesson</a></div>
+</body>
+</html>

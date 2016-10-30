@@ -1,0 +1,18 @@
+﻿body {
+}
+
+#letter {
+    display: block;
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#instructions {
+display:block;
+width:70%;
+font-family:Verdana;
+margin-left:auto;
+margin-right:auto;
+text-align:center;
+}

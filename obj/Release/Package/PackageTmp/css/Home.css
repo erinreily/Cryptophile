@@ -1,0 +1,136 @@
+﻿body {
+    margin-bottom:50px;
+}
+
+p {
+    margin:10px;
+}
+
+#mary {
+    display:block;
+    width: 30%;
+    margin-top:20px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.navbar-brand {
+    font-family:'Monotype Corsiva';
+    font-size:30px;
+}
+
+.title {
+    margin:10px;
+    font-family:'Monotype Corsiva';
+    font-size:40px;
+}
+
+.lesson {
+    width:90%;
+    margin-top:10px;
+    margin-bottom:10px;
+    margin:auto;
+}
+
+#practice {
+    margin:10px;
+}
+
+textarea {
+    width:75%;
+    height:100px;
+    margin:10px;
+}
+
+#message {
+    height:100px;
+    border:1px solid gray;
+    width: 75%;
+    margin:10px;
+}
+
+#cmessage {
+    height:100px;
+    border:1px solid gray;
+    width: 75%;
+    margin:10px;
+}
+
+#vmessage {
+    height:100px;
+    border:1px solid gray;
+    margin:10px;
+}
+
+#vtable {
+    display:inline-block;
+}
+
+#vstuff {
+    display:inline-block;
+    width:50%;
+}
+
+#vkey {
+    margin:10px;
+}
+
+#vinput {
+    width:95% !important;
+}
+
+.feedback {
+    height:30px;
+}
+
+.button {
+    background:linear-gradient(grey,black);
+    width:110px;
+    color:white;
+    padding:5px;
+    border-radius:4px;
+    text-align:center;
+    margin:10px;
+    cursor:pointer;
+}
+
+.button a {
+    color:white;
+    text-decoration:none;
+}
+
+.button.hover {
+    cursor:pointer;
+}
+
+table {
+    display:inline-block;
+    margin-left:30px;
+}
+
+td {
+   border:1px solid grey; 
+    padding:5px;
+}
+#steggame {
+position:relative;
+text-align:center;
+margin-top:20px;
+}
+
+#top {
+    height:230px;
+position:relative;
+z-index:2;
+}
+
+#top:hover {
+    opacity:0;
+}
+
+#bottom {
+    height:230px;
+    position:relative;
+    left:-200px;
+    z-index:1;
+}
